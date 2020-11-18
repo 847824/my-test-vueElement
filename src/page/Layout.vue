@@ -30,6 +30,12 @@ export default{
   },
   mounted(){
       console.log('11111111111==>',headMenu)
+      
+     
+  },
+
+  methods:{
+
   }
 }
 </script>

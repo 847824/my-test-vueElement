@@ -7,7 +7,6 @@ import Getter from '@/store/getters';
  
 Vue.use(Vuex);
 
-
 if (module.hot) {
     // 使 action 和 mutation 成为可热重载模块
     module.hot.accept(['./mutations'], () => {

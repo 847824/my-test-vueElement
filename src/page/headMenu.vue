@@ -28,8 +28,16 @@
         tabIndex: 2
       }
     },
+    mounted(){
+      this.$on('test',function(msg){//$on()和$emit()要放在同一个页面里才生效,而且$on()要放在这个方法里才能监听其他方法的触发
+        console.log('wwwwwwww=>',msg)
+      })
+     
+    },
     methods: {
       handleTabsEdit(targetName, action) {
+        console.log('有没有进入此函数')
+        this.$emit('test',{name:'这是组件事件监听测试'})
         if (action === 'add') {
           let newTabName = ++this.tabIndex + '';
           this.editableTabs.push({
@@ -56,6 +64,10 @@
           this.editableTabsValue = activeName;
           this.editableTabs = tabs.filter(tab => tab.name !== targetName);
         }
+      },
+      getces(){
+
+        
       }
     }
   }
